@@ -4,46 +4,104 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tabel Data</title>
+<title>Tabel Biodata</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-    background:#0f2027;
-    color:white;
-    font-family:Arial;
-    padding:50px;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
 }
 
+body{
+    background:linear-gradient(135deg,#0a1f44,#0d47a1,#1976d2);
+    color:white;
+    min-height:100vh;
+    padding:60px 20px;
+}
+
+/* JUDUL */
 h1{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:40px;
+    font-size:32px;
+    color:#bbdefb;
+}
+
+/* TABEL */
+.table-container{
+    overflow-x:auto;
 }
 
 table{
     width:100%;
-    max-width:800px;
+    max-width:850px;
     margin:auto;
     border-collapse:collapse;
+    background:rgba(255,255,255,0.08);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
-th,td{
-    border:1px solid #00ffe7;
-    padding:12px;
+th, td{
+    padding:14px 18px;
     text-align:center;
 }
 
 th{
-    background:#00ffe7;
-    color:black;
+    background:#2196f3;
+    color:white;
+    font-weight:600;
+    font-size:15px;
 }
 
-.back{
+td{
+    color:#e3f2fd;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+/* HOVER */
+tr:hover td{
+    background:rgba(33,150,243,0.2);
+}
+
+/* TOMBOL KEMBALI */
+.back-btn{
     display:block;
+    width:220px;
+    margin:40px auto 0;
+    padding:12px;
     text-align:center;
-    margin-top:30px;
-    color:#00ffe7;
+    background:#2196f3;
+    color:white;
     text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#42a5f5;
+    transform:scale(1.05);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+
+    h1{
+        font-size:26px;
+    }
+
+    th,td{
+        padding:10px;
+        font-size:13px;
+    }
+
 }
 
 </style>
@@ -51,49 +109,71 @@ th{
 
 <body>
 
-<h1>Tabel Biodata</h1>
+<h1>Tabel Data Pribadi</h1>
+
+<div class="table-container">
 
 <table>
 
+<thead>
 <tr>
-<th>No</th>
-<th>Data</th>
-<th>Keterangan</th>
+    <th>No</th>
+    <th>Jenis Data</th>
+    <th>Keterangan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+    <td>1</td>
+    <td>Nama Lengkap</td>
+    <td>Jasson Alfarro</td>
 </tr>
 
 <tr>
-<td>1</td>
-<td>Nama</td>
-<td>Jasson Alfarro</td>
+    <td>2</td>
+    <td>Tempat, Tanggal Lahir</td>
+    <td>Jakarta, 01 November 2006</td>
 </tr>
 
 <tr>
-<td>2</td>
-<td>TTL</td>
-<td>Jakarta, 01 November 2006</td>
+    <td>3</td>
+    <td>Jenis Kelamin</td>
+    <td>Laki-laki</td>
 </tr>
 
 <tr>
-<td>3</td>
-<td>Jurusan</td>
-<td>Sistem Informasi</td>
+    <td>4</td>
+    <td>Jurusan</td>
+    <td>Sistem Informasi</td>
 </tr>
 
 <tr>
-<td>4</td>
-<td>Email</td>
-<td>jassonalfarro07@gmail.com</td>
+    <td>5</td>
+    <td>Email</td>
+    <td>jassonalfarro07@gmail.com</td>
 </tr>
 
 <tr>
-<td>5</td>
-<td>No HP</td>
-<td>0822-5888-7778</td>
+    <td>6</td>
+    <td>No HP</td>
+    <td>0822-5888-7778</td>
 </tr>
+
+<tr>
+    <td>7</td>
+    <td>Hobi</td>
+    <td>Ngoding, Desain, Gaming</td>
+</tr>
+
+</tbody>
 
 </table>
 
-<a href="biodata.html" class="back">⬅ Kembali ke Biodata</a>
+</div>
+
+<a href="biodata.html" class="back-btn">⬅ Kembali ke Biodata</a>
 
 </body>
 </html>
