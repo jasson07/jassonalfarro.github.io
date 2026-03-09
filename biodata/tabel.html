@@ -12,95 +12,156 @@
 
 /* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
 }
 
 body{
-    background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
-    color:white;
-    padding:50px 20px;
-    min-height:100vh;
+background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+color:white;
+padding:80px 20px;
+min-height:100vh;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+top:0;
+left:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+padding:20px 50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+.logo{
+font-weight:700;
+}
+
+/* SIDEBAR */
+
+.menu-btn{
+position:fixed;
+top:20px;
+left:20px;
+font-size:26px;
+cursor:pointer;
+background:#00ffe7;
+color:black;
+padding:8px 14px;
+border-radius:8px;
+z-index:1001;
+}
+
+.sidebar{
+position:fixed;
+left:-250px;
+top:0;
+width:250px;
+height:100%;
+background:#0f2027;
+padding-top:80px;
+transition:0.3s;
+z-index:1000;
+}
+
+.sidebar a{
+display:block;
+padding:15px 25px;
+color:white;
+text-decoration:none;
+border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar a:hover{
+background:#00ffe7;
+color:black;
+}
+
+.sidebar.active{
+left:0;
 }
 
 /* JUDUL */
 h1{
-    text-align:center;
-    margin-bottom:50px;
-    font-size:32px;
-    color:#00ffe7;
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+color:#00ffe7;
 }
 
 /* TABEL */
 .table-container{
-    overflow-x:auto;
+overflow-x:auto;
 }
 
 table{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-    border-collapse:collapse;
-    border-radius:12px;
-    overflow:hidden;
+width:100%;
+max-width:900px;
+margin:auto;
+border-collapse:collapse;
+border-radius:12px;
+overflow:hidden;
 }
 
 th, td{
-    padding:15px 20px;
-    text-align:center;
+padding:15px 20px;
+text-align:center;
 }
 
 th{
-    background:#00ffe7;
-    color:black;
-    font-weight:600;
-    font-size:15px;
+background:#00ffe7;
+color:black;
+font-weight:600;
 }
 
 td{
-    background: rgba(255,255,255,0.05);
-    color:white;
-    border-bottom:1px solid rgba(0,255,231,0.3);
+background:rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(0,255,231,0.3);
 }
 
 /* HOVER */
 tr:hover td{
-    background: rgba(0,255,231,0.1);
+background:rgba(0,255,231,0.1);
 }
 
-/* TOMBOL KEMBALI */
+/* BUTTON */
 .back-btn{
-    display:block;
-    width:220px;
-    margin:40px auto 0;
-    padding:12px;
-    text-align:center;
-    background:#00ffe7;
-    color:black;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:600;
-    transition:0.3s;
+display:block;
+width:220px;
+margin:40px auto 0;
+padding:12px;
+text-align:center;
+background:#00ffe7;
+color:black;
+text-decoration:none;
+border-radius:30px;
+font-weight:600;
+transition:0.3s;
 }
 
 .back-btn:hover{
-    background:#33fff0;
-    transform:scale(1.05);
+background:#33fff0;
+transform:scale(1.05);
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
 
-    h1{
-        font-size:26px;
-    }
+h1{
+font-size:26px;
+}
 
-    th,td{
-        padding:10px;
-        font-size:13px;
-    }
+th,td{
+padding:10px;
+font-size:13px;
+}
 
 }
 
@@ -108,6 +169,18 @@ tr:hover td{
 </head>
 
 <body>
+
+<!-- BUTTON MENU -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+
+<a href="biodata.html">Home</a>
+<a href="biodata.html#profile">Profile</a>
+<a href="tabel.html">Tabel</a>
+
+</div>
 
 <h1>Tabel Data Pribadi</h1>
 
@@ -117,54 +190,54 @@ tr:hover td{
 
 <thead>
 <tr>
-    <th>No</th>
-    <th>Jenis Data</th>
-    <th>Keterangan</th>
+<th>No</th>
+<th>Jenis Data</th>
+<th>Keterangan</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
-    <td>1</td>
-    <td>Nama Lengkap</td>
-    <td>Jasson Alfarro</td>
+<td>1</td>
+<td>Nama Lengkap</td>
+<td>Jasson Alfarro</td>
 </tr>
 
 <tr>
-    <td>2</td>
-    <td>Tempat, Tanggal Lahir</td>
-    <td>Jakarta, 01 November 2006</td>
+<td>2</td>
+<td>Tempat, Tanggal Lahir</td>
+<td>Jakarta, 01 November 2006</td>
 </tr>
 
 <tr>
-    <td>3</td>
-    <td>Jenis Kelamin</td>
-    <td>Laki-laki</td>
+<td>3</td>
+<td>Jenis Kelamin</td>
+<td>Laki-laki</td>
 </tr>
 
 <tr>
-    <td>4</td>
-    <td>Jurusan</td>
-    <td>Sistem Informasi</td>
+<td>4</td>
+<td>Jurusan</td>
+<td>Sistem Informasi</td>
 </tr>
 
 <tr>
-    <td>5</td>
-    <td>Email</td>
-    <td>jassonalfarro07@gmail.com</td>
+<td>5</td>
+<td>Email</td>
+<td>jassonalfarro07@gmail.com</td>
 </tr>
 
 <tr>
-    <td>6</td>
-    <td>No HP</td>
-    <td>0822-5888-7778</td>
+<td>6</td>
+<td>No HP</td>
+<td>0822-5888-7778</td>
 </tr>
 
 <tr>
-    <td>7</td>
-    <td>Hobi</td>
-    <td>Ngoding, Desain, Gaming</td>
+<td>7</td>
+<td>Hobi</td>
+<td>Ngoding, Desain, Gaming</td>
 </tr>
 
 </tbody>
@@ -174,6 +247,14 @@ tr:hover td{
 </div>
 
 <a href="biodata.html" class="back-btn">⬅ Kembali ke Biodata</a>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active");
+}
+
+</script>
 
 </body>
 </html>
