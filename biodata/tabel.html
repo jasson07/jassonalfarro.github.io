@@ -21,7 +21,7 @@ font-family:'Montserrat',sans-serif;
 body{
 background: linear-gradient(120deg,#0f2027,#203a43,#2c5364);
 color:white;
-padding:80px 20px;
+padding:80px 20px 80px 240px;
 min-height:100vh;
 }
 
@@ -47,33 +47,24 @@ font-weight:700;
 /* SIDEBAR */
 
 .menu-btn{
-position:fixed;
-top:20px;
-left:20px;
-font-size:26px;
-cursor:pointer;
-background:#00ffe7;
-color:black;
-padding:8px 14px;
-border-radius:8px;
-z-index:1001;
+display:none;
 }
 
 .sidebar{
 position:fixed;
-left:-250px;
+left:0;
 top:0;
-width:250px;
+width:220px;
 height:100%;
 background:#0f2027;
-padding-top:80px;
-transition:0.3s;
+padding-top:90px;
 z-index:1000;
+box-shadow:5px 0 20px rgba(0,0,0,0.4);
 }
 
 .sidebar a{
 display:block;
-padding:15px 25px;
+padding:16px 30px;
 color:white;
 text-decoration:none;
 border-bottom:1px solid rgba(255,255,255,0.1);
@@ -82,10 +73,6 @@ border-bottom:1px solid rgba(255,255,255,0.1);
 .sidebar a:hover{
 background:#00ffe7;
 color:black;
-}
-
-.sidebar.active{
-left:0;
 }
 
 /* JUDUL */
@@ -170,15 +157,13 @@ font-size:13px;
 
 <body>
 
-<!-- BUTTON MENU -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 
 <a href="biodata.html">Home</a>
 <a href="biodata.html#profile">Profile</a>
 <a href="tabel.html">Tabel</a>
+
 
 </div>
 
@@ -248,13 +233,4 @@ font-size:13px;
 
 <a href="biodata.html" class="back-btn">⬅ Kembali ke Biodata</a>
 
-<script>
-
-function toggleMenu(){
-document.getElementById("sidebar").classList.toggle("active");
-}
-
-</script>
-
-</body>
-</html>
+<scrip
