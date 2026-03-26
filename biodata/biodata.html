@@ -27,9 +27,9 @@ color:white;
 
 nav{
 position:fixed;
-width:100%;
+width:calc(100% - 220px);
 top:0;
-left:0;
+left:220px;
 background:rgba(0,0,0,0.6);
 backdrop-filter:blur(10px);
 padding:20px 60px;
@@ -37,6 +37,10 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
+}
+
+body{
+padding-left:220px;
 }
 
 .logo{
@@ -62,27 +66,17 @@ color:#00ffe7;
 /* SIDEBAR */
 
 .menu-btn{
-position:fixed;
-top:18px;
-left:20px;
-font-size:26px;
-cursor:pointer;
-background:#00ffe7;
-color:black;
-padding:6px 12px;
-border-radius:8px;
-z-index:1001;
+display:none;
 }
 
 .sidebar{
 position:fixed;
-left:-260px;
+left:0;
 top:0;
-width:260px;
+width:220px;
 height:100%;
 background:#0f2027;
 padding-top:90px;
-transition:0.35s;
 z-index:1000;
 box-shadow:5px 0 20px rgba(0,0,0,0.4);
 }
@@ -100,10 +94,6 @@ transition:0.2s;
 background:#00ffe7;
 color:black;
 padding-left:40px;
-}
-
-.sidebar.active{
-left:0;
 }
 
 /* HERO */
@@ -267,15 +257,13 @@ max-width:100%;
 
 <body>
 
-<!-- BUTTON SIDEBAR -->
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
-
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
 
 <a href="#home">Home</a>
 <a href="#profile">Profile</a>
 <a href="tabel.html">Tabel</a>
+
 
 </div>
 
@@ -289,6 +277,7 @@ max-width:100%;
 <li><a href="#home">Home</a></li>
 <li><a href="#profile">Profile</a></li>
 <li><a href="tabel.html">Tabel</a></li>
+
 </ul>
 
 </nav>
@@ -419,13 +408,4 @@ Lihat Profil
 <p>© 2026 Jasson Alfarro | Sistem Informasi</p>
 </footer>
 
-<script>
-
-function toggleMenu(){
-document.getElementById("sidebar").classList.toggle("active");
-}
-
-</script>
-
-</body>
-</html>
+<scrip
